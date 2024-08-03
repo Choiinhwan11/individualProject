@@ -21,10 +21,10 @@ public class ProfileController {
         return ResponseEntity.ok(profile);
     }
 
-    @PutMapping("/{userId}/profileUpdate")
-    public ResponseEntity<ProfileUpdateDTO> updateProfile(@PathVariable("userId") String userId,
-                                                          @RequestBody ProfileUpdateDTO profileUpdateDTO) {
-        ProfileUpdateDTO updatedProfile = profileService.updateProfile(userId, profileUpdateDTO);
-        return ResponseEntity.ok(updatedProfile);
-    }
+//    @PutMapping("/{userId}/profileUpdate")
+//    public ResponseEntity<ProfileUpdateDTO> updateProfile(@PathVariable("userId") String userId,
+//                                                          @RequestBody ProfileUpdateDTO profileUpdateDTO) {
+//        ProfileUpdateDTO updatedProfile = profileService.updateProfile(userId, profileUpdateDTO);
+//        return ResponseEntity.ok(updatedProfile);
+//    }
 }

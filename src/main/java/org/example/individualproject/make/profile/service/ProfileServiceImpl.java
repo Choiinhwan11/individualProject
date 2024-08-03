@@ -30,26 +30,29 @@ public class ProfileServiceImpl implements ProfileService {
         }
     }
 
-    @Override
-    @Transactional
-    public ProfileUpdateDTO updateProfile(String userId, ProfileUpdateDTO profileUpdateDTO) {
-        // 프로필 엔티티 조회
-        Profile profile = profileRepository.findByUserId(userId);
-
-        if (profile != null) {
-            // 엔티티 업데이트를 빌더 패턴으로 처리
-            Profile updatedProfile = Profile.builder()
-                    .id(profile.getId())
-                    .userId(profile.getUserId())
-                    .username(profileUpdateDTO.getUsername())
-                    .email(profileUpdateDTO.getEmail())
-                    .build();
-
-            // 엔티티 저장
-            Profile savedProfile = profileRepository.save(updatedProfile);
-        } else {
-            throw new RuntimeException("Profile not found for userId: " + userId);
-        }
-    }
-
+//    public ProfileUpdateDTO updateProfile(String userId, ProfileUpdateDTO profileUpdateDTO) {
+//        // 프로필 엔티티 조회
+//        Profile profile = profileRepository.findByUserId(userId);
+//
+//        if (profile != null) {
+//
+//            if (profileUpdateDTO.getUsername() != null) {
+//                profile.setUsername(profileUpdateDTO.getUsername());
+//            }
+//            if (profileUpdateDTO.getEmail() != null) {
+//                profile.setEmail(profileUpdateDTO.getEmail());
+//            }
+//
+//            // 엔티티 저장
+//            Profile savedProfile = profileRepository.save(profile);
+//
+//            // 업데이트된 정보를 ProfileUpdateDTO로 변환하여 반환
+//            return ProfileUpdateDTO.builder()
+//                    .username(savedProfile.getUsername())
+//                    .email(savedProfile.getEmail())
+//                    .build();
+//        } else {
+//            throw new RuntimeException("Profile not found for userId: " + userId);
+//        }
+//}
 }

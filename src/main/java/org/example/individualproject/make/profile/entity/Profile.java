@@ -1,5 +1,6 @@
 package org.example.individualproject.make.profile.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -14,11 +15,18 @@ import lombok.NoArgsConstructor;
 @Builder
 @Getter
 public class Profile {
-
     @Id
     @GeneratedValue
-    private Long id ;
+    private Long id;
 
-//    @Column(nullable = false)
-//    private String name
+    @Column(nullable = false, unique = true)
+    private String userId;
+
+    @Column(nullable = true)
+    private String username;
+
+    @Column(nullable = true)
+    private String email;
+
+
 }

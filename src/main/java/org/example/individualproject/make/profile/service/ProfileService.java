@@ -6,5 +6,5 @@ import org.example.individualproject.make.profile.dto.ProfileUpdateDTO;
 public interface ProfileService {
 
     ProfileDTO getProfileById(String userId);
-    ProfileUpdateDTO updateProfile(String userId, ProfileUpdateDTO profileUpdateDTO);
+//    ProfileUpdateDTO updateProfile(String userId, ProfileUpdateDTO profileUpdateDTO);
 }

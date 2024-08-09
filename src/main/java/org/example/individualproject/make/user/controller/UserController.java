@@ -4,7 +4,6 @@ import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.example.individualproject.make.user.entity.User;
 import org.example.individualproject.make.user.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "user", produces = "application/json")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000")
 @RequiredArgsConstructor
 public class UserController {
 

@@ -1,15 +1,15 @@
 package org.example.individualproject.make.profile.repository;
 
-import org.springframework.context.annotation.Profile;
+import org.example.individualproject.make.profile.entity.UserProfile;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional
-public interface ProfileRepository extends JpaRepository<Profile, Long> {
+public interface UserProfileRepository extends JpaRepository<UserProfile, Long> {
 
-   org.example.individualproject.make.profile.entity.Profile findByUserId(String userId);
+//    findByUserId(String userId);
 
 
 }

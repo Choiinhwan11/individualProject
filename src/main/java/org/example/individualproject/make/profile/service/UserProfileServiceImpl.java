@@ -1,34 +1,32 @@
 package org.example.individualproject.make.profile.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.individualproject.make.profile.dto.ProfileDTO;
-import org.example.individualproject.make.profile.dto.ProfileUpdateDTO;
-import org.example.individualproject.make.profile.entity.Profile;
-import org.example.individualproject.make.profile.repository.ProfileRepository;
+import org.example.individualproject.make.profile.repository.UserProfileRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
-public class ProfileServiceImpl implements ProfileService {
 
-    private final ProfileRepository profileRepository;
+public class UserProfileServiceImpl implements UserProfileService {
 
-    @Override
-    public ProfileDTO getProfileById(String userId) {
-        Profile profile = profileRepository.findByUserId(userId);
+    private final UserProfileRepository profileRepository;
 
-        if (profile != null) {
-            return ProfileDTO.builder()
-                    .id(profile.getId())
-//                    .username(profile.getUsername())
-//                    .email(profile.getEmail())
-                    .build();
-        } else {
-            throw new RuntimeException("Profile not found for userId: " + userId);
-        }
-    }
+//    @Override
+//    public ProfileDTO getProfileById(Long userId) {
+//        Optional<Profile> profile = profileRepository.findById(userId);
+//
+//        if (profile != null) {
+//            return ProfileDTO.builder()
+//                    .id(profile.get())
+////                    .username(profile.getUsername())
+////                    .email(profile.getEmail())
+//                    .build();
+//        } else {
+//            throw new RuntimeException("Profile not found for userId: " + userId);
+//        }
+//    }
 
 //    public ProfileUpdateDTO updateProfile(String userId, ProfileUpdateDTO profileUpdateDTO) {
 //        // 프로필 엔티티 조회
